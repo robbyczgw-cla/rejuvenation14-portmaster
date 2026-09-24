@@ -1,0 +1,57 @@
+{
+  // Rejuvenation V14 port config (ROCKNIX / PortMaster, aarch64).
+  // The launcher renders this template to mkxp.json on every start,
+  // replacing @PORTDIR@ with the port folder. Edit the .in file, not mkxp.json.
+  // Game settings below mirror game/mkxp.json from V14.
+
+  "gameFolder": "@PORTDIR@/game",
+  "rgssVersion": 1,
+  "defScreenW": 512,
+  "defScreenH": 384,
+  "pathCache": false,
+  "patches": ["patch"],
+  "fontHinting": 2,
+  "fontHeightReporting": 1,
+  "inputRepeatStart": 0.3,
+  "inputRepeatDelay": 0.05,
+  "axisDeadzone": [0.1, 0.1, 0.1, 0.1, 0, 0],
+  "bindingNames": {
+    "c": "Action",
+    "b": "Back / Menu",
+    "a": "Run",
+    "x": "Mega / Misc",
+    "y": "Use Item",
+    "z": "Quick Save",
+    "l": "Previous Page",
+    "r": "Next Page",
+    "d": "Run (hold)",
+    "e": "Speed Up",
+    "f": "Mute / Unmute"
+  },
+
+  // Handheld display: mkxp-z scales 512x384 to the panel, keeps 4:3.
+  "fullscreen": true,
+  "fixedAspectRatio": true,
+  "smoothScaling": 1,
+
+  // Upload path for tilesets taller than the GPU limit (Adreno/zink: 16384 px;
+  // 21 V14 tilesets are taller). Tested configuration.
+  "subImageFix": true,
+
+  // Guide/Home would soft-reset the game (F12 too). Too easy to hit on a handheld.
+  "enableReset": false,
+
+  // The healing jingle is a MIDI file; ROCKNIX ships this GM soundfont.
+  "midiSoundFont": "/usr/share/soundfonts/GeneralUser.sf2",
+
+  // Native Ruby extensions of the bundled runtime (zlib is loaded at engine start).
+  "rubyLoadpath": [
+    "@PORTDIR@/runtime/stdlib",
+    "@PORTDIR@/runtime/stdlib-aarch64-linux"
+  ],
+
+  // Port compatibility fixes; the game folder stays untouched. See PATCHES.md.
+  "preloadScript": [
+    "@PORTDIR@/compat/preload/rocknix_compat.rb"@DEBUG_PRELOAD@
+  ]
+}

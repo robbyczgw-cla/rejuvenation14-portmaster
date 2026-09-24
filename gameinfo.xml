@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./Rejuvenation V14.sh</path>
+		<name>Rejuvenation V14</name>
+		<desc>Fan game by the Rejuvenation team. Explore the Aevium region and stand against Team Xen. Requires the V14 game files from rebornevo.com.</desc>
+		<developer>Rejuvenation Team</developer>
+		<publisher>Rejuvenation Team</publisher>
+		<genre>RPG</genre>
+	</game>
+</gameList>

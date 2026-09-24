@@ -1,0 +1,107 @@
+diff --git a/src/eventthread.cpp b/src/eventthread.cpp
+index 30808c5..09635ff 100644
+--- a/src/eventthread.cpp
++++ b/src/eventthread.cpp
+@@ -32,6 +32,7 @@
+ #include <alc.h>
+ #include <alext.h>
+ #include <cmath>
++#include <map>
+ 
+ #include "sharedstate.h"
+ #include "graphics.h"
+@@ -196,10 +197,29 @@ void EventThread::process(RGSSThreadData &rtData)
+     1);
+ #endif
+     
++    std::map<SDL_JoystickID, SDL_GameController*> controllers;
++    auto openControllers = [&]() {
++        for (int deviceIndex = 0; deviceIndex < SDL_NumJoysticks(); ++deviceIndex)
++        {
++            if (!SDL_IsGameController(deviceIndex))
++                continue;
++
++            SDL_JoystickID id = SDL_JoystickGetDeviceInstanceID(deviceIndex);
++            if (id < 0 || controllers.count(id))
++                continue;
++
++            SDL_GameController *controller = SDL_GameControllerOpen(deviceIndex);
++            if (!controller)
++                continue;
++
++            controllers.emplace(id, controller);
++            if (!ctrl)
++                ctrl = controller;
++        }
++    };
++
+     SDL_JoystickUpdate();
+-    if (SDL_NumJoysticks() > 0 && SDL_IsGameController(0)) {
+-            ctrl = SDL_GameControllerOpen(0);
+-    }
++    openControllers();
+     
+     char buffer[128];
+     
+@@ -434,6 +454,8 @@ void EventThread::process(RGSSThreadData &rtData)
+                 break;
+                 
+             case SDL_CONTROLLERBUTTONDOWN:
++                if (controllers.count(event.cbutton.which))
++                    ctrl = controllers.at(event.cbutton.which);
+                 if (event.cbutton.button == SDL_CONTROLLER_BUTTON_GUIDE)
+                 {
+                     if (!rtData.config.enableReset)
+@@ -471,21 +493,34 @@ void EventThread::process(RGSSThreadData &rtData)
+                 // Take deadzone into account when storing last input
+                 // This is based on percentage, so multiply by the max value
+                 if(std::abs(event.caxis.value) > rtData.config.axisDeadzone[event.caxis.axis] * 32767) {
++                    if (controllers.count(event.caxis.which))
++                        ctrl = controllers.at(event.caxis.which);
+                     lastInputDevice = LAST_INPUT_DEVICE_GAMEPAD;
+                 }
+                 break;
+                 
+             case SDL_CONTROLLERDEVICEADDED:
+-                if (event.cdevice.which > 0)
+-                    break;
+-                
+-                ctrl = SDL_GameControllerOpen(0);
++                // ADDED carries a device index; rescan to open every controller.
++                openControllers();
+                 break;
+                 
+             case SDL_CONTROLLERDEVICEREMOVED:
+-                resetInputStates();
+-                ctrl = 0;
++            {
++                // REMOVED carries the instance ID, not the device index.
++                auto it = controllers.find(event.cdevice.which);
++                if (it == controllers.end())
++                    break;
++
++                bool wasPrimary = (ctrl == it->second);
++                SDL_GameControllerClose(it->second);
++                controllers.erase(it);
++                if (wasPrimary)
++                {
++                    resetInputStates();
++                    ctrl = controllers.empty() ? 0 : controllers.begin()->second;
++                }
+                 break;
++            }
+                 
+             case SDL_MOUSEBUTTONDOWN :
+                 mouseState.buttons[event.button.button] = true;
+@@ -654,8 +689,9 @@ void EventThread::process(RGSSThreadData &rtData)
+     /* Just in case */
+     rtData.syncPoint.resumeThreads();
+     
+-    if (SDL_GameControllerGetAttached(ctrl))
+-        SDL_GameControllerClose(ctrl);
++    for (const auto &controller : controllers)
++        SDL_GameControllerClose(controller.second);
++    ctrl = 0;
+     
+ #ifndef MKXPZ_BUILD_XCODE
+     delete sMenu;

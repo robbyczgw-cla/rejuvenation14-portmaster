@@ -1,0 +1,33 @@
+{
+    "version": 3,
+    "name": "rejuvenation14.zip",
+    "items": [
+        "Rejuvenation V14.sh",
+        "rejuvenation14"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Rejuvenation V14",
+        "porter": [
+            "robbyczgw-cla"
+        ],
+        "desc": "Rejuvenation V14 is a free fan game by the Rejuvenation team, set in the Aevium region. This port runs it on aarch64 handhelds with the mkxp-z engine the game ships with on PC. The game files are not included; download them from the developers.",
+        "desc_md": null,
+        "inst": "Download V14 (Linux or Windows) from https://www.rebornevo.com/rejuvdown/ and copy everything inside it into ports/rejuvenation14/game/. Requires ROCKNIX on a device running Sway (Wayland) with desktop OpenGL; tested on the AYN Odin 2 with 14.0.24. The in-game updater works.",
+        "inst_md": "Download V14 (Linux or Windows) from [rebornevo.com/rejuvdown](https://www.rebornevo.com/rejuvdown/) and copy everything inside it into ports/rejuvenation14/game/. Requires ROCKNIX on a device running Sway (Wayland) with desktop OpenGL; tested on the AYN Odin 2 with 14.0.24. The in-game updater works.",
+        "genres": [
+            "rpg",
+            "adventure"
+        ],
+        "image": {},
+        "rtr": false,
+        "exp": false,
+        "runtime": null,
+        "reqs": [
+            "power"
+        ],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

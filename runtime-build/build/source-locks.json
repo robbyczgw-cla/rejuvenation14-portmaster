@@ -1,0 +1,207 @@
+[
+  {
+    "path": ".",
+    "url": "https://github.com/enumag/mkxp-z.git",
+    "commit": "afce4ce68404fb19383e00fe415b86dcc3aa214c"
+  },
+  {
+    "path": "linux/downloads/aarch64/dbus",
+    "url": "https://gitlab.freedesktop.org/dbus/dbus",
+    "commit": "958bf9db2100553bcd2fe2a854e1ebb42e886054"
+  },
+  {
+    "path": "linux/downloads/aarch64/fluidsynth",
+    "url": "https://github.com/FluidSynth/fluidsynth",
+    "commit": "df432e151dcaf463b1ecc7e873803bfa19733fd3"
+  },
+  {
+    "path": "linux/downloads/aarch64/fluidsynth/gcem",
+    "url": "https://github.com/kthohr/gcem.git",
+    "commit": "012ae73c6d0a2cb09ffe86475f5c6fba3926e200"
+  },
+  {
+    "path": "linux/downloads/aarch64/fluidsynth/test/manual",
+    "url": "https://github.com/FluidSynth/testdata.git",
+    "commit": "01d05b750667c3caef76f2ba855343b4dc3aa42a"
+  },
+  {
+    "path": "linux/downloads/aarch64/fluidsynth/test/manual/SoundFont-Spec-Test",
+    "url": "https://github.com/mrbumpy409/SoundFont-Spec-Test",
+    "commit": "0af09848d4d4f154da9ae4dc757e743f6bdd9fec"
+  },
+  {
+    "path": "linux/downloads/aarch64/fluidsynth/test/manual/sf2/ANMP-data",
+    "url": "https://github.com/derselbst/ANMP-data",
+    "commit": "28c09fec0f7affdb6c5c7a63e0525502b130541d"
+  },
+  {
+    "path": "linux/downloads/aarch64/fluidsynth/test/manual/sf2/GeneralUser-GS",
+    "url": "https://github.com/mrbumpy409/GeneralUser-GS",
+    "commit": "d0fc360abafa736f11a1fa18c721f65bfc3a6991"
+  },
+  {
+    "path": "linux/downloads/aarch64/freetype",
+    "url": "https://github.com/mkxp-z/freetype2",
+    "commit": "4d8db130ea4342317581bab65fc96365ce806b77"
+  },
+  {
+    "path": "linux/downloads/aarch64/freetype/subprojects/dlg",
+    "url": "https://github.com/nyorain/dlg.git",
+    "commit": "d142e646e263c89f93663e027c2f0d03739ab42d"
+  },
+  {
+    "path": "linux/downloads/aarch64/libpng",
+    "url": "https://github.com/pnggroup/libpng",
+    "commit": "2b978915d82377df13fcbb1fb56660195ded868a"
+  },
+  {
+    "path": "linux/downloads/aarch64/ogg",
+    "url": "https://github.com/xiph/ogg",
+    "commit": "be05b13e98b048f0b5a0f5fa8ce514d56db5f822"
+  },
+  {
+    "path": "linux/downloads/aarch64/openal",
+    "url": "https://github.com/kcat/openal-soft",
+    "commit": "dc7d7054a5b4f3bec1dc23a42fd616a0847af948"
+  },
+  {
+    "path": "linux/downloads/aarch64/openssl",
+    "url": "https://github.com/openssl/openssl",
+    "commit": "c3cc0f1386b0544383a61244a4beeb762b67498f"
+  },
+  {
+    "path": "linux/downloads/aarch64/physfs",
+    "url": "https://github.com/icculus/physfs",
+    "commit": "eb3383b532c5f74bfeb42ec306ba2cf80eed988c"
+  },
+  {
+    "path": "linux/downloads/aarch64/pixman",
+    "url": "https://gitlab.freedesktop.org/pixman/pixman",
+    "commit": "37216a32839f59e8dcaa4c3951b3fcfc3f07852c"
+  },
+  {
+    "path": "linux/downloads/aarch64/ruby",
+    "url": "https://github.com/mkxp-z/ruby",
+    "commit": "4d85560cf65938d7883a323bf553acad1faf5eae"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2",
+    "url": "https://github.com/mkxp-z/SDL",
+    "commit": "d3ac4c3742a405e719071fc4f5a7ba8a125c76a1"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image",
+    "url": "https://github.com/mkxp-z/SDL_image",
+    "commit": "d3c6d5963dbe438bcae0e2b6f3d7cfea23d02829"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/dav1d",
+    "url": "https://github.com/libsdl-org/dav1d.git",
+    "commit": "52d0c1f44eff76c3773636a9805f69ec26633037"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/jpeg",
+    "url": "https://github.com/libsdl-org/jpeg.git",
+    "commit": "779556c0121c8f69bc3ffd792e661afc879ab27b"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libavif",
+    "url": "https://github.com/libsdl-org/libavif.git",
+    "commit": "a3e9315474deb60e39b6e3aad88798eee26dadea"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl",
+    "url": "https://github.com/libsdl-org/libjxl.git",
+    "commit": "059943974d5ad102407acb6adc28486b23ee785b"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/brotli",
+    "url": "https://github.com/libsdl-org/brotli.git",
+    "commit": "2ae7ff838d1a7ba9726ef0f9b3e42d9eadc5d252"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/brotli/research/esaxx",
+    "url": "https://github.com/hillbig/esaxx",
+    "commit": "ca7cb332011ec37a8436487f210f396b84bd8273"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/brotli/research/libdivsufsort",
+    "url": "https://github.com/y-256/libdivsufsort.git",
+    "commit": "5f60d6f026c30fb4ac296f696b3c8b0eb71bd428"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/googletest",
+    "url": "https://github.com/google/googletest",
+    "commit": "0ea2d8f8fa1601abb9ce713b7414e7b86f90bc61"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/highway",
+    "url": "https://github.com/libsdl-org/highway.git",
+    "commit": "a2104044ca0717cc571e4a7570b6e8900d4f8c13"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/lcms",
+    "url": "https://github.com/mm2/Little-CMS",
+    "commit": "65c63bf549d78253c14b30b3d62cb668bbbe612c"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/lodepng",
+    "url": "https://github.com/lvandeve/lodepng",
+    "commit": "48e5364ef48ec2408f44c727657ac1b6703185f8"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/sjpeg",
+    "url": "https://github.com/webmproject/sjpeg.git",
+    "commit": "868ab558fad70fcbe8863ba4e85179eeb81cc840"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libjxl/third_party/skcms",
+    "url": "https://skia.googlesource.com/skcms",
+    "commit": "64374756e03700d649f897dbd98c95e78c30c7da"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libpng",
+    "url": "https://github.com/libsdl-org/libpng.git",
+    "commit": "999173059e2651fab2a0102eeba18748c4bd9827"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libtiff",
+    "url": "https://github.com/libsdl-org/libtiff.git",
+    "commit": "17461f1659d6b7cf38318aca30b607f5a6948759"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/libwebp",
+    "url": "https://github.com/libsdl-org/libwebp.git",
+    "commit": "3bd82ea4782080c6500b786cf557f2debfe0ca1d"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_image/external/zlib",
+    "url": "https://github.com/libsdl-org/zlib.git",
+    "commit": "f040d0cf7a553078a195d6c3af0ec78b14d4242e"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl2_ttf",
+    "url": "https://github.com/mkxp-z/sdl_ttf",
+    "commit": "0d5909ee2f1c95770d7fe76eb2fbd66ece26a5bf"
+  },
+  {
+    "path": "linux/downloads/aarch64/sdl_sound",
+    "url": "https://github.com/mkxp-z/SDL_sound",
+    "commit": "cfb2533eb3bac3700015cbd87cc623bea1467239"
+  },
+  {
+    "path": "linux/downloads/aarch64/theora",
+    "url": "https://github.com/xiph/theora",
+    "commit": "28fd5ec77f0ad0e07a371cef1047828116f6bd8a"
+  },
+  {
+    "path": "linux/downloads/aarch64/uchardet",
+    "url": "https://gitlab.freedesktop.org/uchardet/uchardet",
+    "commit": "ae6302a016088ad07177f86d417b20010053632b"
+  },
+  {
+    "path": "linux/downloads/aarch64/vorbis",
+    "url": "https://github.com/xiph/vorbis",
+    "commit": "0657aee69dec8508a0011f47f3b69d7538e9d262"
+  }
+]

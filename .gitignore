@@ -1,0 +1,24 @@
+dist/
+rejuvenation14/game/*
+!rejuvenation14/game/README.txt
+rejuvenation14/runtime/
+rejuvenation14/userdata/
+rejuvenation14/mkxp.json
+rejuvenation14/gamecontrollerdb.txt
+rejuvenation14/log.txt
+.DS_Store
+
+# runtime-build outputs (see runtime-build/BUILD.md)
+runtime-build/mkxp-z.aarch64
+runtime-build/lib/
+runtime-build/stdlib/
+runtime-build/stdlib-aarch64-linux/
+runtime-build/tools/
+runtime-build/licenses/
+runtime-build/evidence/
+runtime-build/cacert.pem
+runtime-build/run.sh
+runtime-build/build/runtime-aarch64.tar.gz
+runtime-build/build/builder-image.tar.gz
+runtime-build/build/source-archives/
+tools/private-patterns.txt

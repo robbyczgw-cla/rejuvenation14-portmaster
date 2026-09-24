@@ -1,0 +1,52 @@
+diff --git a/src/eventthread.cpp b/src/eventthread.cpp
+--- a/src/eventthread.cpp
++++ b/src/eventthread.cpp
+@@ -454,8 +454,12 @@
+                 break;
+                 
+             case SDL_CONTROLLERBUTTONDOWN:
+-                if (controllers.count(event.cbutton.which))
++                if (controllers.count(event.cbutton.which) &&
++                    ctrl != controllers.at(event.cbutton.which))
++                {
++                    memset(controllerState.axes, 0, sizeof(controllerState.axes));
+                     ctrl = controllers.at(event.cbutton.which);
++                }
+                 if (event.cbutton.button == SDL_CONTROLLER_BUTTON_GUIDE)
+                 {
+                     if (!rtData.config.enableReset)
+@@ -489,15 +493,28 @@
+                 break;
+                 
+             case SDL_CONTROLLERAXISMOTION:
+-                controllerState.axes[event.caxis.axis] = event.caxis.value;
++            {
++                auto it = controllers.find(event.caxis.which);
++                if (it == controllers.end())
++                    break;
++
+                 // Take deadzone into account when storing last input
+                 // This is based on percentage, so multiply by the max value
+-                if(std::abs(event.caxis.value) > rtData.config.axisDeadzone[event.caxis.axis] * 32767) {
+-                    if (controllers.count(event.caxis.which))
+-                        ctrl = controllers.at(event.caxis.which);
++                bool aboveDeadzone = std::abs(event.caxis.value) >
++                    rtData.config.axisDeadzone[event.caxis.axis] * 32767;
++                if (ctrl != it->second)
++                {
++                    if (!aboveDeadzone)
++                        break;
++
++                    memset(controllerState.axes, 0, sizeof(controllerState.axes));
++                    ctrl = it->second;
++                }
++                controllerState.axes[event.caxis.axis] = event.caxis.value;
++                if (aboveDeadzone)
+                     lastInputDevice = LAST_INPUT_DEVICE_GAMEPAD;
+-                }
+-                break;
++                break;
++            }
+                 
+             case SDL_CONTROLLERDEVICEADDED:
+                 // ADDED carries a device index; rescan to open every controller.
